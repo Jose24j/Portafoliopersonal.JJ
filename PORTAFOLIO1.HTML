@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>José Jiménez · Portafolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Montserrat:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#120626;--bg2:#1b0a3a;--pink:#ff3d94;--orange:#ff9140;--purple:#7a3ff2;--teal:#22e6d0;--yellow:#ffd84a;--text:#fff4fb;--muted:#cdb4e0;--card:rgba(255,255,255,.06);--line:rgba(255,255,255,.14);
+--grad:linear-gradient(135deg,#ff3d94,#ff9140);
+--head:"Bowlby One",Impact,"Arial Black",sans-serif;--body:"Montserrat",system-ui,sans-serif;--mono:"JetBrains Mono",Consolas,monospace;
+color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.65;overflow-x:hidden}
+h1,h2,h3{font-family:var(--head);font-weight:400}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;justify-content:center;gap:4px;flex-wrap:wrap;padding:10px;background:rgba(18,6,38,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:.82rem;padding:6px 14px;border-radius:99px;transition:.2s}
+nav a:hover{color:#fff;background:var(--grad)}
+section{max-width:1000px;margin:auto;padding:80px 22px 10px}
+.eyebrow{font-family:var(--mono);color:var(--teal);font-size:.8rem;letter-spacing:2px;text-transform:uppercase}
+h2{font-size:clamp(1.7rem,4.5vw,2.4rem);margin:6px 0 10px}
+h2 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--muted);max-width:640px;margin-bottom:28px}
+/* HERO */
+.hero{position:relative;min-height:90vh;display:flex;align-items:center;overflow:hidden;padding:60px 22px 110px;
+background:radial-gradient(ellipse at 50% 100%,#ffd84a 0 7%,#ff9140 16%,#ff3d94 34%,#7a3ff2 58%,#120626 85%)}
+.stripes{position:absolute;left:0;right:0;bottom:70px;height:24%;background:repeating-linear-gradient(0deg,var(--bg) 0 5px,transparent 5px 18px);opacity:.5}
+.hero-in{position:relative;max-width:1000px;margin:auto;width:100%;display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center}
+@media(max-width:820px){.hero-in{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(2.8rem,9vw,5.6rem);line-height:1;text-shadow:3px 3px 0 var(--pink),6px 6px 0 var(--purple);margin:10px 0 14px}
+.hero p.lead{font-weight:600;max-width:480px;text-shadow:0 2px 8px #0009}
+.btns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+.btn{font-family:var(--head);color:#14072e;background:var(--yellow);padding:11px 22px;border-radius:10px;text-decoration:none;border:3px solid #14072e;box-shadow:4px 4px 0 #14072e;font-size:.95rem;transition:.15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #14072e}
+.btn.alt{background:var(--teal)}
+.term{background:#0b0418ee;border:1px solid var(--line);border-radius:14px;box-shadow:0 20px 50px #0008;overflow:hidden}
+.term .bar{display:flex;gap:6px;padding:10px 14px;background:#ffffff10}
+.term .bar i{width:11px;height:11px;border-radius:50%;background:var(--pink)}
+.term .bar i:nth-child(2){background:var(--yellow)}.term .bar i:nth-child(3){background:var(--teal)}
+.term pre{font-family:var(--mono);font-size:.8rem;padding:16px;min-height:190px;white-space:pre-wrap;color:var(--teal)}
+.term pre b{color:var(--pink);font-weight:500}.term pre u{color:var(--yellow);text-decoration:none}
+.caret{display:inline-block;width:8px;height:14px;background:var(--teal);vertical-align:middle;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.road{position:absolute;bottom:0;left:0;right:0;height:64px;background:#0b0418;border-top:3px solid var(--teal)}
+.road::before{content:"";position:absolute;top:30px;left:0;right:0;height:4px;background:repeating-linear-gradient(90deg,var(--yellow) 0 36px,transparent 36px 84px);animation:ln 1s linear infinite}
+.drive{position:absolute;bottom:30px;font-size:2.6rem;animation:dr 12s linear infinite;opacity:.9}
+.drive.b{animation-delay:-6s;font-size:2.2rem}
+@keyframes ln{to{background-position:84px 0}}
+@keyframes dr{from{left:-80px}to{left:105%}}
+.fl{position:absolute;font-family:var(--mono);color:#fff;opacity:.75;font-size:1.6rem;animation:fy 6s ease-in-out infinite;pointer-events:none}
+@keyframes fy{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-18px) rotate(8deg)}}
+/* CARDS */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;transition:.2s}
+.card:hover{border-color:var(--pink);transform:translateY(-3px)}
+.card h3{font-size:1.02rem;margin:8px 0 6px;color:var(--yellow)}
+.card p{color:var(--muted);font-size:.92rem}
+.ico{font-size:1.8rem}
+/* TABS */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tab{font-family:var(--mono);font-size:.85rem;font-weight:500;color:var(--text);background:var(--card);border:1px solid var(--line);padding:9px 18px;border-radius:99px;cursor:pointer;transition:.2s}
+.tab:hover{border-color:var(--teal)}
+.tab.on{background:var(--grad);border-color:transparent;color:#14072e;font-weight:800}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:700px){.panel{grid-template-columns:1fr}}
+.panel h3{font-size:1.5rem;color:var(--yellow);margin-bottom:6px}
+.status{display:inline-block;font-size:.72rem;font-weight:800;padding:3px 12px;border-radius:99px;background:var(--teal);color:#14072e;margin-bottom:12px}
+.status.s2{background:var(--orange)}
+.panel ul{list-style:none;padding:0}
+.panel li{padding:6px 0 6px 24px;position:relative;color:var(--muted);font-size:.92rem}
+.panel li::before{content:"▸";position:absolute;left:0;color:var(--pink)}
+.meter{height:10px;background:#0006;border-radius:99px;overflow:hidden;margin:6px 0 4px}
+.meter i{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--yellow));width:0;transition:width .8s}
+.small{font-size:.78rem;color:var(--muted)}
+/* TIMELINE */
+.tl{border-left:2px solid var(--pink);padding-left:22px;display:grid;gap:18px}
+.tl div{position:relative}
+.tl div::before{content:"";position:absolute;left:-30px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--yellow);border:3px solid var(--bg)}
+.tl h3{font-size:1rem;color:var(--yellow)}
+.tl p{color:var(--muted);font-size:.92rem}
+.chip{display:inline-block;font-family:var(--mono);font-size:.75rem;padding:3px 11px;border-radius:99px;background:var(--purple);margin:6px 6px 0 0}
+.chip.t{background:var(--teal);color:#14072e}
+.feature{margin-top:18px;background:linear-gradient(135deg,rgba(122,63,242,.35),rgba(255,61,148,.25));border:1px solid var(--pink);border-radius:16px;padding:26px}
+.feature h3{font-size:1.8rem;color:var(--yellow);margin:8px 0}
+.feature p{color:var(--text);font-size:.95rem;margin-bottom:10px}
+.socials{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.soc{display:flex;align-items:center;gap:10px;background:#fff;color:#14072e;text-decoration:none;font-weight:800;padding:10px 22px 10px 14px;border-radius:99px;border:3px solid #14072e;box-shadow:4px 4px 0 #14072e;transition:.15s}
+.soc:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #14072e}
+.soc svg{width:34px;height:34px}
+.contact{text-align:center;border-radius:20px;padding:40px 22px;background:linear-gradient(135deg,#7a3ff2,#ff3d94);border:2px solid var(--yellow)}
+.contact p{max-width:520px;margin:6px auto 0}
+footer{text-align:center;padding:50px 20px 36px;color:var(--muted);font-size:.82rem}
+.reveal{opacity:0;transform:translateY(24px);transition:.7s}
+.reveal.in{opacity:1;transform:none}
+html{-webkit-text-size-adjust:100%}
+img,svg{max-width:100%}
+h1,h2,h3,p{overflow-wrap:break-word}
+.hero{min-height:90svh}
+@media(max-width:1024px){section{padding-top:64px}.hero-in{gap:24px}}
+@media(max-width:820px){.hero{min-height:auto;padding:50px 20px 110px}.term pre{min-height:170px}.fl{display:none}}
+@media(max-width:700px){
+nav{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:8px 10px;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{flex:0 0 auto;font-size:.78rem;padding:6px 12px}
+section{padding:56px 18px 6px}
+.sub{margin-bottom:20px}
+.grid{gap:12px}
+.card{padding:18px}
+.panel{padding:20px;gap:16px}
+.feature{padding:20px}
+.tabs{gap:6px}
+.tab{padding:8px 14px;font-size:.8rem}
+.btns .btn{flex:1 1 100%;text-align:center}
+.contact{padding:30px 16px}
+.socials{flex-direction:column;align-items:stretch}
+.soc{justify-content:center}
+.tl{padding-left:18px}
+.tl div::before{left:-26px}
+}
+@media(max-width:380px){.hero h1{font-size:2.5rem}.term pre{font-size:.72rem}}
+@media(hover:none){.card:hover{transform:none}.btn:hover,.soc:hover{transform:none;box-shadow:4px 4px 0 #14072e}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav>
+<a href="#inicio">Inicio</a><a href="#perfil">Perfil</a><a href="#conocimientos">Conocimientos</a><a href="#proyecto">Proyecto</a><a href="#formacion">Formación</a><a href="#contacto">Contacto</a>
+</nav>
+
+<header class="hero" id="inicio">
+<div class="stripes"></div>
+<span class="fl" style="left:5%;top:20%">&lt;/&gt;</span>
+<span class="fl" style="right:6%;top:14%;animation-delay:-2s">{ }</span>
+<span class="fl" style="left:44%;bottom:30%;animation-delay:-4s">⚙️</span>
+<div class="hero-in">
+<div>
+<span class="eyebrow">// Portafolio personal</span>
+<h1>José<br>Jiménez</h1>
+<p class="lead">Estudiante de bachillerato interesado en la tecnología, con bases en desarrollo web, Python y Excel. Aprendo cada día y participo en proyectos en equipo.</p>
+<div class="btns"><a class="btn" href="#proyecto">Ver proyecto</a><a class="btn alt" href="#conocimientos">Mis conocimientos</a></div>
+</div>
+<div class="term"><div class="bar"><i></i><i></i><i></i></div><pre id="typed"></pre></div>
+</div>
+<div class="road"><span class="drive">🏎️</span><span class="drive b">🚙</span></div>
+</header>
+
+<section id="perfil" class="reveal">
+<span class="eyebrow">01 / Perfil</span>
+<h2>Sobre <span>mí</span></h2>
+<p class="sub">Soy estudiante de bachillerato en Ciencias y me falta un año para terminar. Todavía estoy decidiendo qué carrera tomar, y la tecnología es el camino que más me atrae. Se me dan bien las matemáticas sencillas y aprendo programación con práctica y proyectos.</p>
+<div class="grid">
+<div class="card"><div class="ico">💻</div><h3>Desarrollo web</h3><p>Uso HTML, CSS y JavaScript, y programo en Visual Studio Code.</p></div>
+<div class="card"><div class="ico">🐍</div><h3>Python</h3><p>Estoy iniciando con los fundamentos del lenguaje.</p></div>
+<div class="card"><div class="ico">📊</div><h3>Excel</h3><p>Me preparo para una certificación de Excel.</p></div>
+<div class="card"><div class="ico">🤝</div><h3>Proyecto en equipo</h3><p>Me reuní con compañeros y participé como programador en un proyecto grupal.</p></div>
+</div>
+</section>
+
+<section id="conocimientos" class="reveal">
+<span class="eyebrow">02 / Conocimientos</span>
+<h2>Lo que <span>sé y estoy aprendiendo</span></h2>
+<p class="sub">Elige una tecnología. Las barras indican mi avance de aprendizaje, no un nivel certificado. Todavía me falta práctica y experiencia, que se van ganando con el tiempo.</p>
+<div class="tabs" id="tabs"></div>
+<div class="panel" id="panel"></div>
+</section>
+
+<section id="proyecto" class="reveal">
+<span class="eyebrow">03 / Proyecto</span>
+<h2>Proyecto en <span>equipo</span></h2>
+<p class="sub">Un proyecto con compañeros donde nos reunimos y yo participé como programador.</p>
+<div class="grid">
+<div class="card"><div class="ico">🧑‍💻</div><h3>Mi rol</h3><p>Participé como programador, escribiendo código junto a mis compañeros.</p></div>
+<div class="card"><div class="ico">🤖</div><h3>Apoyo con IA</h3><p>Usé inteligencia artificial como herramienta de apoyo para avanzar más rápido.</p></div>
+<div class="card"><div class="ico">🔍</div><h3>Entender el código</h3><p>Conozco cómo funciona cada lenguaje, por lo que reviso y entiendo lo que se programa.</p></div>
+</div>
+<div class="feature">
+<span class="status">Proyecto grupal</span>
+<h3>LUMEN</h3>
+<p>Página web que acompaña a niños, niñas y jóvenes en su desarrollo, con herramientas, actividades y experiencias inclusivas que promueven su bienestar y autonomía. Incluye juegos educativos, actividades sociales, regulación emocional, recursos extras, giras inclusivas, una tienda e información general sobre el autismo.</p>
+<p>Nos reunimos como equipo y yo participé como programador, apoyándome con IA. En el futuro el proyecto seguirá desarrollándose para ayudar.</p>
+<span class="chip t">Página web</span><span class="chip">Proyecto en desarrollo</span>
+<div class="btns"><a class="btn alt" href="https://webpagelumen.github.io/Lumen-Oficial-2026/index.html" target="_blank" rel="noopener">Visitar Lumen ↗</a></div>
+</div>
+</section>
+
+<section id="formacion" class="reveal">
+<span class="eyebrow">04 / Formación</span>
+<h2>Formación e <span>idiomas</span></h2>
+<p class="sub">&nbsp;</p>
+<div class="tl">
+<div><h3>Bachillerato en Ciencias (en curso)</h3><p>Me falta un año para terminar. Estoy decidiendo qué carrera tomar y la tecnología me atrae mucho.</p></div>
+<div><h3>Preparación para certificación de Excel</h3><p>En proceso, aprendiendo las herramientas de la hoja de cálculo.</p></div>
+<div><h3>Aprendizaje autodidacta</h3><p>HTML, CSS, JavaScript y primeros pasos en Python.</p></div>
+<div><h3>Idiomas</h3><p>Español · Inglés básico</p></div>
+</div>
+</section>
+
+<section id="contacto" class="reveal">
+<div class="contact">
+<h2>¿<span style="-webkit-text-fill-color:#fff">Hablamos</span>?</h2>
+<p>Estoy disponible para aprender, colaborar y participar en nuevos proyectos de tecnología.</p>
+<div class="socials">
+<a class="soc" id="wa" href="#contacto" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#25D366" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span>WhatsApp</span></a>
+<a class="soc" id="ig" href="#contacto" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><defs><linearGradient id="igg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#ffc400"/><stop offset=".5" stop-color="#ff7a3d"/><stop offset="1" stop-color="#ff3d94"/></linearGradient></defs><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="url(#igg)" stroke-width="2.2"/><circle cx="12" cy="12" r="4.4" stroke="url(#igg)" stroke-width="2.2"/><circle cx="17.6" cy="6.4" r="1.3" fill="#ff3d94"/></svg><span>Instagram</span></a>
+</div>
+<p class="small" id="soon" hidden style="margin-top:12px;color:#fff">Pronto agregaré mi contacto aquí.</p>
+</div>
+</section>
+<footer>© 2026 José Jiménez</footer>
+
+<script>
+const T={
+HTML:{s:"Lo he practicado",c:1,p:40,i:["Estructura de páginas web","Títulos, listas, enlaces e imágenes","Organización del contenido"]},
+CSS:{s:"Lo he practicado",c:1,p:40,i:["Colores, tipografía y diseño","Adaptar páginas a distintas pantallas","Animaciones básicas"]},
+JavaScript:{s:"Lo he practicado",c:1,p:40,i:["Hacer las páginas interactivas","Responder a clics y acciones del usuario","Lógica básica de programación"]},
+Python:{s:"Iniciando",c:0,p:25,i:["Fundamentos del lenguaje","Variables, condiciones y ciclos","Aprendiendo con práctica"]},
+Excel:{s:"Preparando certificación",c:0,p:50,i:["Hojas de cálculo y fórmulas","Organización de datos","Camino a una certificación de Excel"]}};
+const tabs=document.getElementById("tabs"),panel=document.getElementById("panel");
+function show(k){document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("on",b.textContent===k));
+const d=T[k];panel.innerHTML=`<div><h3>${k}</h3><span class="status ${d.c?'':'s2'}">${d.s}</span><div class="meter"><i></i></div><span class="small">Avance de aprendizaje: ${d.p}%</span></div><ul>${d.i.map(x=>`<li>${x}</li>`).join("")}</ul>`;
+requestAnimationFrame(()=>requestAnimationFrame(()=>panel.querySelector(".meter i").style.width=d.p+"%"))}
+Object.keys(T).forEach(k=>{const b=document.createElement("button");b.className="tab";b.textContent=k;b.onclick=()=>show(k);tabs.appendChild(b)});
+show("HTML");
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("in")}),{threshold:.1});
+document.querySelectorAll(".reveal").forEach(e=>io.observe(e));
+// contacto: escribe aquí tu número (con código de país, solo dígitos) y tu usuario de Instagram
+const WA_NUMERO="50764718602",IG_USUARIO="j_se.st";
+[["wa",WA_NUMERO?"https://wa.me/"+WA_NUMERO.replace(/\D/g,""):""],["ig",IG_USUARIO?"https://instagram.com/"+IG_USUARIO.replace("@",""):""]].forEach(([id,u])=>{const a=document.getElementById(id);if(u)a.href=u;else a.onclick=e=>{e.preventDefault();document.getElementById("soon").hidden=false}});
+// terminal
+const lines=["<b>const</b> nombre = <u>'José Jiménez'</u>;","<b>const</b> estudio = <u>'Ciencias'</u>;","<b>const</b> stack = [<u>'HTML'</u>, <u>'CSS'</u>, <u>'JS'</u>];","<b>const</b> aprendiendo = [<u>'Python'</u>, <u>'Excel'</u>];","<b>if</b> (curioso) { <b>aprender</b>(); }"];
+const out=document.getElementById("typed");let li=0,ci=0,buf="";
+function tick(){if(li>=lines.length){out.innerHTML=buf+'<span class="caret"></span>';return}
+const raw=lines[li];ci++;let cur=raw,vis=0,res="",tag=false;
+for(const ch of raw){if(ch==="<")tag=true;res+=ch;if(!tag)vis++;if(ch===">")tag=false;if(vis>=ci&&!tag)break}
+out.innerHTML=buf+res+'<span class="caret"></span>';
+if(vis>=raw.replace(/<[^>]+>/g,"").length){buf+=raw+"\n";li++;ci=0;setTimeout(tick,350)}else setTimeout(tick,35)}
+tick();
+</script>
+</body>
+</html>
